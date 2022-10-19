@@ -307,8 +307,8 @@ def default_render_settings(
     scene.display.shading.light = "STUDIO"
     scene.display.shading.show_specular_highlight = True
 
-    scene.render.tile_x = tile_size
-    scene.render.tile_y = tile_size
+    # scene.render.tile_x = tile_size
+    # scene.render.tile_y = tile_size
     scene.cycles.debug_use_spatial_splits = spatial_splits
     scene.render.use_persistent_data = True
 
@@ -347,6 +347,10 @@ def segmentation_render_settings():
 
     view_layer = zpy.blender.verify_view_layer()
     view_layer.pass_alpha_threshold = 0.0
+    # Added since this is not guaranteed to be enabled by default
+    # The z pass is required to generate the Depth image
+    # To have the "Depth" property present in the rl_node
+    view_layer.use_pass_z = True
 
     scene.cycles.max_bounces = 0
     scene.cycles.bake_type = "EMIT"
