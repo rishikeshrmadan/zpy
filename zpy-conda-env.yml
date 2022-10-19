@@ -1,0 +1,24 @@
+name: zpy-test
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - ptvsd
+  - seaborn
+  - numpy
+  - pyzmq
+  - click
+  - scikit-image
+  - pyyaml
+  - pydash
+  - requests
+  - shapely
+  - tqdm
+  - gin-config
+  - versioneer
+  - m2r2
+prefix: /home/rishi/anaconda3/envs/zpy-test
+
+# After this install table-logger via pip, will maybe work on that in the future
+# and install zpy via pip either from pypi or locally using pip install /path_to_zpy_repo
